@@ -115,6 +115,33 @@ import type {
     RuntimeState,
 } from "./core/Runtime.js";
 
+// infra/
+
+// -- connector/
+
+// ---- mongodb/
+
+// ------ connector
+import MongoDBConnector from "./infra/connector/mongodb/MongoDBConnector.js";
+import type {
+    MongoDBConnectorArgs,
+    MongoDBConnectorDeps,
+    MongoDBConnectorOptions,
+    MongoDBConnectorConfig,
+
+    MongoDBClientOptions,
+
+    MongoDBConnectorState,
+} from "./infra/connector/mongodb/MongoDBConnector.js";
+
+// ------ factory
+import createMongoDBConnector from "./infra/connector/mongodb/MongoDBConnectorFactory.js";
+import type {
+    MongoDBConnectorFactory,
+
+    MongoDBConnectorFactoryArgs,
+} from "./infra/connector/mongodb/MongoDBConnectorFactory.js";
+
 export {
     // util/
 
@@ -179,6 +206,18 @@ export {
 
     // -- runtime
     Runtime,
+
+    // infra/
+
+    // -- connector/
+
+    // ---- mongodb/
+
+    // ------ connector
+    MongoDBConnector,
+
+    // ------ factory
+    createMongoDBConnector,
 };
 
 export type {
@@ -216,4 +255,25 @@ export type {
     RuntimeTransportCreator,
 
     RuntimeState,
+
+    // infra/
+
+    // -- connector/
+
+    // ---- mongodb/
+
+    // ------ connector
+    MongoDBConnectorArgs,
+    MongoDBConnectorDeps,
+    MongoDBConnectorOptions,
+    MongoDBConnectorConfig,
+
+    MongoDBClientOptions,
+
+    MongoDBConnectorState,
+
+    // ------ factory
+    MongoDBConnectorFactory,
+
+    MongoDBConnectorFactoryArgs,
 };

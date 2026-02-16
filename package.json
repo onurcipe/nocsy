@@ -40,7 +40,8 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "dependencies": {
-        "lodash": "^4.17.23"
+        "lodash": "^4.17.23",
+        "mongodb": "^7.1.0"
     },
     "devDependencies": {
         "@types/lodash": "^4.17.23",
