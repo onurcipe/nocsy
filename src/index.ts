@@ -59,6 +59,9 @@ import FrameworkError from "./error/FrameworkError.js";
 // -- user
 import UserError from "./error/UserError.js";
 
+// -- abort
+import AbortError from "./error/AbortError.js";
+
 // core/
 
 // -- registry
@@ -76,6 +79,9 @@ import type {
     LogTarget,
     LogLevel,
 } from "./core/Logger.js";
+
+// -- aborter
+import Aborter from "./core/Aborter.js";
 
 // -- connector
 import type {
@@ -150,6 +156,9 @@ export {
     // -- user
     UserError,
 
+    // -- abort
+    AbortError,
+
     // core/
 
     // -- registry
@@ -157,6 +166,9 @@ export {
 
     // -- logger
     Logger,
+
+    // -- aborter
+    Aborter,
 
     // -- runtime
     Runtime,
