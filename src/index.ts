@@ -45,6 +45,17 @@ import {
     isArray,
 } from "./util/data-type/array.js";
 
+// error/
+
+// -- nocsy
+import NocsyError from "./error/NocsyError.js";
+
+// -- framework
+import FrameworkError from "./error/FrameworkError.js";
+
+// -- user
+import UserError from "./error/UserError.js";
+
 export {
     // util/
 
@@ -78,6 +89,17 @@ export {
 
     // ---- array
     isArray,
+
+    // error/
+
+    // -- nocsy
+    NocsyError,
+
+    // -- framework
+    FrameworkError,
+
+    // -- user
+    UserError,
 };
 
 export type {
