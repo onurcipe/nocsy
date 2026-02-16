@@ -56,6 +56,14 @@ import FrameworkError from "./error/FrameworkError.js";
 // -- user
 import UserError from "./error/UserError.js";
 
+// core/
+
+// -- registry
+import Registry from "./core/Registry.js";
+import type {
+    RegistryToken,
+} from "./core/Registry.js";
+
 export {
     // util/
 
@@ -100,7 +108,16 @@ export {
 
     // -- user
     UserError,
+
+    // core/
+
+    // -- registry
+    Registry,
 };
 
 export type {
+    // core/
+
+    // -- registry
+    RegistryToken,
 };
