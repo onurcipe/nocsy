@@ -83,6 +83,13 @@ import type {
 // -- aborter
 import Aborter from "./core/Aborter.js";
 
+// -- factory
+import type {
+    Factory,
+
+    FactoryArgs,
+} from "./core/Factory.js";
+
 // -- connector
 import type {
     Connector,
@@ -186,6 +193,11 @@ export type {
 
     LogTarget,
     LogLevel,
+
+    // -- factory
+    Factory,
+
+    FactoryArgs,
 
     // -- connector
     Connector,
