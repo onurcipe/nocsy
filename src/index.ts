@@ -33,6 +33,9 @@ import {
 import {
     isDate,
     toDate,
+
+    formatUtcDate,
+    formatUtcTime,
 } from "./util/data-type/date.js";
 
 // ---- object
@@ -64,6 +67,16 @@ import type {
     RegistryToken,
 } from "./core/Registry.js";
 
+// -- logger
+import Logger from "./core/Logger.js";
+import type {
+    LoggerOptions,
+    LoggerConfig,
+
+    LogTarget,
+    LogLevel,
+} from "./core/Logger.js";
+
 export {
     // util/
 
@@ -92,6 +105,9 @@ export {
     isDate,
     toDate,
 
+    formatUtcDate,
+    formatUtcTime,
+
     // ---- object
     isObject,
 
@@ -113,6 +129,9 @@ export {
 
     // -- registry
     Registry,
+
+    // -- logger
+    Logger,
 };
 
 export type {
@@ -120,4 +139,11 @@ export type {
 
     // -- registry
     RegistryToken,
+
+    // -- logger
+    LoggerOptions,
+    LoggerConfig,
+
+    LogTarget,
+    LogLevel,
 };
