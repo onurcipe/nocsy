@@ -177,6 +177,48 @@ import type {
     Repository,
 } from "./core/db/Repository.js";
 
+// infra/
+
+// -- db/
+
+// ---- mongodb/
+
+// ------ data type
+import MongoDBDataType from "./infra/db/mongodb/MongoDBDataType.js";
+import type {
+    MongoDBBsonTypeName,
+} from "./infra/db/mongodb/MongoDBDataType.js";
+
+// ------ model
+import MongoDBModel from "./infra/db/mongodb/MongoDBModel.js";
+import type {
+    MongoDBModelArgs,
+    MongoDBModelOptions,
+    MongoDBModelConfig,
+
+    MongoDBModelDefinition,
+    MongoDBJsonSchema,
+} from "./infra/db/mongodb/MongoDBModel.js";
+
+// ------ gateway
+import MongoDBGateway from "./infra/db/mongodb/MongoDBGateway.js";
+import type {
+    MongoDBGatewayArgs,
+    MongoDBGatewayDeps,
+    MongoDBGatewayOptions,
+    MongoDBGatewayConfig,
+} from "./infra/db/mongodb/MongoDBGateway.js";
+
+// ------ repository
+import MongoDBRepository from "./infra/db/mongodb/MongoDBRepository.js";
+import type {
+    MongoDBRepositoryArgs,
+    MongoDBRepositoryDeps,
+
+    MongoDBContext,
+    MongoDBDottedObject,
+} from "./infra/db/mongodb/MongoDBRepository.js";
+
 export {
     // util/
 
@@ -263,6 +305,24 @@ export {
 
     // ------ factory
     createHttpTransport,
+
+    // infra/
+
+    // -- db/
+
+    // ---- mongodb/
+
+    // ------ data type
+    MongoDBDataType,
+
+    // ------ model
+    MongoDBModel,
+
+    // ------ gateway
+    MongoDBGateway,
+
+    // ------ repository
+    MongoDBRepository,
 };
 
 export type {
@@ -348,4 +408,34 @@ export type {
 
     // ---- repository
     Repository,
+
+    // infra/
+
+    // -- db/
+
+    // ---- mongodb/
+
+    // ------ data type
+    MongoDBBsonTypeName,
+
+    // ------ model
+    MongoDBModelArgs,
+    MongoDBModelOptions,
+    MongoDBModelConfig,
+
+    MongoDBModelDefinition,
+    MongoDBJsonSchema,
+
+    // ------ gateway
+    MongoDBGatewayArgs,
+    MongoDBGatewayDeps,
+    MongoDBGatewayOptions,
+    MongoDBGatewayConfig,
+
+    // ------ repository
+    MongoDBRepositoryArgs,
+    MongoDBRepositoryDeps,
+
+    MongoDBContext,
+    MongoDBDottedObject,
 };
