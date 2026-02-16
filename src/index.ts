@@ -177,6 +177,11 @@ import type {
     Repository,
 } from "./core/db/Repository.js";
 
+// ---- session
+import type {
+    Session,
+} from "./core/db/Session.js";
+
 // infra/
 
 // -- db/
@@ -408,6 +413,9 @@ export type {
 
     // ---- repository
     Repository,
+
+    // ---- session
+    Session,
 
     // infra/
 
