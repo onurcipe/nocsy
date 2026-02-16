@@ -168,6 +168,15 @@ import type {
     HttpTransportFactoryArgs,
 } from "./infra/transport/http/HttpTransportFactory.js";
 
+// core/
+
+// -- db/
+
+// ---- repository
+import type {
+    Repository,
+} from "./core/db/Repository.js";
+
 export {
     // util/
 
@@ -332,4 +341,11 @@ export type {
     HttpTransportFactory,
 
     HttpTransportFactoryArgs,
+
+    // core/
+
+    // -- db/
+
+    // ---- repository
+    Repository,
 };
