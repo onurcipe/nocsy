@@ -224,6 +224,14 @@ import type {
     MongoDBDottedObject,
 } from "./infra/db/mongodb/MongoDBRepository.js";
 
+// ------ session
+import MongoDBSession from "./infra/db/mongodb/MongoDBSession.js";
+import type {
+    MongoDBSessionArgs,
+    MongoDBSessionDeps,
+    MongoDBSessionOptions,
+} from "./infra/db/mongodb/MongoDBSession.js";
+
 export {
     // util/
 
@@ -328,6 +336,9 @@ export {
 
     // ------ repository
     MongoDBRepository,
+
+    // ------ session
+    MongoDBSession,
 };
 
 export type {
@@ -446,4 +457,9 @@ export type {
 
     MongoDBContext,
     MongoDBDottedObject,
+
+    // ------ session
+    MongoDBSessionArgs,
+    MongoDBSessionDeps,
+    MongoDBSessionOptions,
 };

@@ -1,4 +1,5 @@
 import type {
+    ClientSession,
     Collection,
     Document,
     Filter, UpdateFilter,
@@ -24,6 +25,7 @@ type MongoDBRepositoryDeps =
 
 type MongoDBContext =
     {
+        session?: ClientSession;
     };
 
 type MongoDBDottedObject =
