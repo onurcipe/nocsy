@@ -62,6 +62,17 @@ import UserError from "./error/UserError.js";
 // -- abort
 import AbortError from "./error/AbortError.js";
 
+// -- record/
+
+// ---- not found
+import RecordNotFoundError from "./error/record/RecordNotFoundError.js";
+
+// ---- multiple found
+import RecordMultipleFoundError from "./error/record/RecordMultipleFoundError.js";
+
+// ---- version mismatch
+import RecordVersionMismatchError from "./error/record/RecordVersionMismatchError.js";
+
 // core/
 
 // -- registry
@@ -232,6 +243,32 @@ import type {
     MongoDBSessionOptions,
 } from "./infra/db/mongodb/MongoDBSession.js";
 
+// core/
+
+// -- service
+import Service from "./core/Service.js";
+import type {
+    ServiceArgs,
+    ServiceDeps,
+    ServiceOptions,
+    ServiceConfig,
+
+    FieldSchema,
+
+    CountHooks,
+    ReadHooks,
+    ReadOneHooks,
+    ReadOneByIdHooks,
+    ReadOneByIdAndVersionHooks,
+    CreateOneHooks,
+    UpdateOneHooks,
+    UpdateOneByIdAndVersionHooks,
+    SoftDeleteOneHooks,
+    SoftDeleteOneByIdAndVersionHooks,
+    DeleteOneHooks,
+    DeleteOneByIdAndVersionHooks,
+} from "./core/Service.js";
+
 export {
     // util/
 
@@ -282,6 +319,17 @@ export {
 
     // -- abort
     AbortError,
+
+    // -- record/
+
+    // ---- not found
+    RecordNotFoundError,
+
+    // ---- multiple found
+    RecordMultipleFoundError,
+
+    // ---- version mismatch
+    RecordVersionMismatchError,
 
     // core/
 
@@ -339,6 +387,11 @@ export {
 
     // ------ session
     MongoDBSession,
+
+    // core/
+
+    // -- service
+    Service,
 };
 
 export type {
@@ -462,4 +515,27 @@ export type {
     MongoDBSessionArgs,
     MongoDBSessionDeps,
     MongoDBSessionOptions,
+
+    // core/
+
+    // -- service
+    ServiceArgs,
+    ServiceDeps,
+    ServiceOptions,
+    ServiceConfig,
+
+    FieldSchema,
+
+    CountHooks,
+    ReadHooks,
+    ReadOneHooks,
+    ReadOneByIdHooks,
+    ReadOneByIdAndVersionHooks,
+    CreateOneHooks,
+    UpdateOneHooks,
+    UpdateOneByIdAndVersionHooks,
+    SoftDeleteOneHooks,
+    SoftDeleteOneByIdAndVersionHooks,
+    DeleteOneHooks,
+    DeleteOneByIdAndVersionHooks,
 };
