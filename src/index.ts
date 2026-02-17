@@ -73,6 +73,29 @@ import RecordMultipleFoundError from "./error/record/RecordMultipleFoundError.js
 // ---- version mismatch
 import RecordVersionMismatchError from "./error/record/RecordVersionMismatchError.js";
 
+// -- http/
+
+// ---- http
+import HttpError from "./error/http/HttpError.js";
+
+// ---- bad request
+import BadRequestError from "./error/http/HttpBadRequestError.js";
+
+// ---- unauthorized
+import UnauthorizedError from "./error/http/HttpUnauthorizedError.js";
+
+// ---- forbidden
+import ForbiddenError from "./error/http/HttpForbiddenError.js";
+
+// ---- not found
+import NotFoundError from "./error/http/HttpNotFoundError.js";
+
+// ---- conflict
+import ConflictError from "./error/http/HttpConflictError.js";
+
+// ---- internal server
+import InternalServerError from "./error/http/HttpInternalServerError.js";
+
 // core/
 
 // -- registry
@@ -269,6 +292,26 @@ import type {
     DeleteOneByIdAndVersionHooks,
 } from "./core/Service.js";
 
+// -- controller
+import Controller from "./core/Controller.js";
+import type {
+    ControllerArgs,
+    ControllerOptions,
+    ControllerConfig,
+
+    Schema,
+    DataTypeAny,
+    DataTypeNull,
+    DataTypePrimitive,
+    DataTypeObject,
+    DataTypeArray,
+
+    ExpectedDataType,
+    SentDataType,
+
+    ErrorResponseBody,
+} from "./core/Controller.js";
+
 export {
     // util/
 
@@ -331,6 +374,29 @@ export {
     // ---- version mismatch
     RecordVersionMismatchError,
 
+    // -- http/
+
+    // ---- http
+    HttpError,
+
+    // ---- bad request
+    BadRequestError,
+
+    // ---- unauthorized
+    UnauthorizedError,
+
+    // ---- forbidden
+    ForbiddenError,
+
+    // ---- not found
+    NotFoundError,
+
+    // ---- conflict
+    ConflictError,
+
+    // ---- internal server
+    InternalServerError,
+
     // core/
 
     // -- registry
@@ -392,6 +458,9 @@ export {
 
     // -- service
     Service,
+
+    // -- controller
+    Controller,
 };
 
 export type {
@@ -538,4 +607,21 @@ export type {
     SoftDeleteOneByIdAndVersionHooks,
     DeleteOneHooks,
     DeleteOneByIdAndVersionHooks,
+
+    // -- controller
+    ControllerArgs,
+    ControllerOptions,
+    ControllerConfig,
+
+    Schema,
+    DataTypeAny,
+    DataTypeNull,
+    DataTypePrimitive,
+    DataTypeObject,
+    DataTypeArray,
+
+    ExpectedDataType,
+    SentDataType,
+
+    ErrorResponseBody,
 };
