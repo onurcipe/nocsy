@@ -40,10 +40,12 @@
         "prepublishOnly": "npm run clean && npm run build"
     },
     "dependencies": {
+        "express": "^5.2.1",
         "lodash": "^4.17.23",
         "mongodb": "^7.1.0"
     },
     "devDependencies": {
+        "@types/express": "^5.0.6",
         "@types/lodash": "^4.17.23",
         "@types/node": "^22.19.11",
         "typescript": "^5.9.3"

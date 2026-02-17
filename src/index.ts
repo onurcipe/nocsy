@@ -312,6 +312,20 @@ import type {
     ErrorResponseBody,
 } from "./core/Controller.js";
 
+// infra/
+
+// -- web/
+
+// ---- express/
+
+// ------ adapter
+import ExpressAdapter from "./infra/web/express/ExpressAdapter.js";
+import type {
+    RequestElementName,
+    RequestSchema,
+    ParsedRequest,
+} from "./infra/web/express/ExpressAdapter.js";
+
 export {
     // util/
 
@@ -461,6 +475,15 @@ export {
 
     // -- controller
     Controller,
+
+    // infra/
+
+    // -- web/
+
+    // ---- express/
+
+    // ------ adapter
+    ExpressAdapter,
 };
 
 export type {
@@ -624,4 +647,15 @@ export type {
     SentDataType,
 
     ErrorResponseBody,
+
+    // infra/
+
+    // -- web/
+
+    // ---- express/
+
+    // ------ adapter
+    RequestElementName,
+    RequestSchema,
+    ParsedRequest,
 };
