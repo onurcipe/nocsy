@@ -79,22 +79,22 @@ import RecordVersionMismatchError from "./error/record/RecordVersionMismatchErro
 import HttpError from "./error/http/HttpError.js";
 
 // ---- bad request
-import BadRequestError from "./error/http/HttpBadRequestError.js";
+import HttpBadRequestError from "./error/http/HttpBadRequestError.js";
 
 // ---- unauthorized
-import UnauthorizedError from "./error/http/HttpUnauthorizedError.js";
+import HttpUnauthorizedError from "./error/http/HttpUnauthorizedError.js";
 
 // ---- forbidden
-import ForbiddenError from "./error/http/HttpForbiddenError.js";
+import HttpForbiddenError from "./error/http/HttpForbiddenError.js";
 
 // ---- not found
-import NotFoundError from "./error/http/HttpNotFoundError.js";
+import HttpNotFoundError from "./error/http/HttpNotFoundError.js";
 
 // ---- conflict
-import ConflictError from "./error/http/HttpConflictError.js";
+import HttpConflictError from "./error/http/HttpConflictError.js";
 
 // ---- internal server
-import InternalServerError from "./error/http/HttpInternalServerError.js";
+import HttpInternalServerError from "./error/http/HttpInternalServerError.js";
 
 // core/
 
@@ -395,22 +395,22 @@ export {
     HttpError,
 
     // ---- bad request
-    BadRequestError,
+    HttpBadRequestError,
 
     // ---- unauthorized
-    UnauthorizedError,
+    HttpUnauthorizedError,
 
     // ---- forbidden
-    ForbiddenError,
+    HttpForbiddenError,
 
     // ---- not found
-    NotFoundError,
+    HttpNotFoundError,
 
     // ---- conflict
-    ConflictError,
+    HttpConflictError,
 
     // ---- internal server
-    InternalServerError,
+    HttpInternalServerError,
 
     // core/
 
