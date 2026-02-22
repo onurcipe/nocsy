@@ -26,6 +26,7 @@ type RuntimeOptions =
         init?: RuntimeInitHook;
         connectors?: RuntimeConnectorCreator[];
         transports?: RuntimeTransportCreator[];
+        ready?: RuntimeReadyHook;
     };
 
 type RuntimeConfig =
@@ -34,6 +35,7 @@ type RuntimeConfig =
         init: RuntimeInitHook | null;
         connectors: RuntimeConnectorCreator[];
         transports: RuntimeTransportCreator[];
+        ready: RuntimeReadyHook | null;
     };
 
 type RuntimeInitHook =
@@ -44,6 +46,9 @@ type RuntimeConnectorCreator =
 
 type RuntimeTransportCreator =
     (runtime: Runtime) => Transport;
+
+type RuntimeReadyHook =
+    (runtime: Runtime) => Promise<void>;
 
 type RuntimeState =
     "idle" | "starting" | "running" | "stopping" | "error";
@@ -75,6 +80,7 @@ class Runtime
             init: options.init ?? null,
             connectors: options.connectors ?? [],
             transports: options.transports ?? [],
+            ready: options.ready ?? null,
         };
     }
 
@@ -249,8 +255,9 @@ class Runtime
         const isRunInitOk: boolean = await this.runInit();
         const isConnectConnectorsOk: boolean = await this.connectConnectors();
         const isStartTransportsOk: boolean = await this.startTransports();
+        const isRunReadyOk: boolean = await this.runReady();
 
-        const isOk: boolean = isRunInitOk && isConnectConnectorsOk && isStartTransportsOk;
+        const isOk: boolean = isRunInitOk && isConnectConnectorsOk && isStartTransportsOk && isRunReadyOk;
 
         this.state = isOk ? "running" : "error";
         this.logger.log(1, "info", `Runtime has ${isOk ? "started" : "started with errors, so it will be stopped."}.`);
@@ -598,6 +605,38 @@ class Runtime
         return okCount === totalCount;
     }
 
+    private async runReady (): Promise<boolean>
+    {
+        let isOk: boolean = true;
+
+        if (!isPresent(this.config.ready))
+        {
+            return isOk;
+        }
+
+        this.logger.log(2, "info", "Runtime is running the ready hook...");
+
+        try
+        {
+            await this.aborter.await(this.config.ready(this));
+        }
+        catch (error: unknown)
+        {
+            isOk = false;
+
+            this.logAbort();
+
+            if (!(error instanceof AbortError))
+            {
+                this.logger.log(0, "error", error);
+            }
+        }
+
+        this.logger.log(1, "info", `Runtime has ${isOk ? "run" : "failed to run"} the ready hook.`);
+
+        return isOk;
+    }
+
     private terminateProcess (exitCode: number): void
     {
         this.logger.log(2, "info", `Runtime is terminating the process (exit code: ${exitCode})...`);
@@ -617,6 +656,7 @@ export type {
     RuntimeInitHook,
     RuntimeConnectorCreator,
     RuntimeTransportCreator,
+    RuntimeReadyHook,
 
     RuntimeState,
 };

@@ -145,6 +145,7 @@ import type {
     RuntimeInitHook,
     RuntimeConnectorCreator,
     RuntimeTransportCreator,
+    RuntimeReadyHook,
 
     RuntimeState,
 } from "./core/Runtime.js";
@@ -519,6 +520,7 @@ export type {
     RuntimeInitHook,
     RuntimeConnectorCreator,
     RuntimeTransportCreator,
+    RuntimeReadyHook,
 
     RuntimeState,
 
